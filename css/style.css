@@ -1,0 +1,63 @@
+body{
+    font-family:Arial;
+    background:#f5f5f5;
+    margin:30px;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+}
+
+.card{
+    display:inline-block;
+    width:30%;
+    background:white;
+    padding:20px;
+    margin:5px;
+    border-radius:10px;
+    box-shadow:0 0 5px gray;
+    text-align:center;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+table th,
+table td{
+    border:1px solid #ddd;
+    padding:10px;
+}
+
+th{
+    background:#333;
+    color:white;
+}
+
+.masuk{
+    background:#d4edda;
+}
+
+.keluar{
+    background:#f8d7da;
+}
+
+form{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+input,
+select,
+button{
+    padding:8px;
+    margin:5px;
+}
+
+button{
+    cursor:pointer;
+}
