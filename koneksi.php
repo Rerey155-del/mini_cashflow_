@@ -4,24 +4,23 @@ $user = 'root';
 $password = '';
 $database = 'mini_cashflow';
 
-// Connect to MySQL server first without selecting a database
+
 $conn = mysqli_connect($host, $user, $password);
 
 if (!$conn) {
     die("Koneksi ke MySQL server gagal: " . mysqli_connect_error());
 }
 
-// Create database if not exists
 if (!mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS `$database`")) {
     die("Gagal membuat database: " . mysqli_error($conn));
 }
 
-// Select database
+
 if (!mysqli_select_db($conn, $database)) {
     die("Gagal memilih database: " . mysqli_error($conn));
 }
 
-// Create table if not exists
+
 $table_sql = "CREATE TABLE IF NOT EXISTS transaksi(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nama_transaksi VARCHAR(100) NOT NULL,
@@ -33,7 +32,6 @@ if (!mysqli_query($conn, $table_sql)) {
     die("Gagal membuat tabel transaksi: " . mysqli_error($conn));
 }
 
-// Seed initial data if table is empty
 $count_result = mysqli_query($conn, "SELECT COUNT(*) as total FROM transaksi");
 $count_data = mysqli_fetch_assoc($count_result);
 if ($count_data['total'] == 0) {
